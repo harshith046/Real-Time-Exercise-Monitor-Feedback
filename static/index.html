@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function startExercise() {
+            const exerciseType = document.getElementById('exercise-type').value;
+
+            fetch('http://localhost:5000/set_exercise', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ exercise_type: exerciseType }),
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Failed to set exercise type on server');
+                    }
+                })
+                .then(data => {
+                    console.log(data.message);
+                    fetch('http://localhost:5000/start_exercise')
+                        .then(startResponse => {
+                            if (startResponse.ok) {
+                                alert(`Successfully started ${exerciseType.replace('_', ' ')} exercise!`);
+                            } else {
+                                alert('Failed to start the exercise process.');
+                            }
+                        });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Exercise</h1>
+        <select id="exercise-type">
+            <option value="push_up">Push Up</option>
+            <option value="hammer_curl">Hammer Curl</option>
+            <option value="squat">Squat</option>
+        </select>
+        <button onclick="startExercise()">Start</button>
+    </div>
+</body>
+</html>
