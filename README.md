@@ -26,18 +26,22 @@ This project combines computer vision, pose analysis, and a user-friendly interf
 ## 🚀 How to Run the Project
 
 1. Clone the repository:  
-   `git clone https://github.com/harshith046/Real-Time-Exercise-Monitor-Feedback.git`  
-   `cd Real-Time-Exercise-Monitor-Feedback`
+   ```
+   git clone https://github.com/harshith046/Real-Time-Exercise-Monitor-Feedback.git
+   cd Real-Time-Exercise-Monitor-Feedback
+   ```
 
-2. Create and activate a virtual environment:  
-   `python -m venv venv`  
-   `venv\Scripts\activate`  
+3. Create and activate a virtual environment:  
+   ```
+   python -m venv venv 
+   venv\Scripts\activate
+   ```
 
-3. Install dependencies:  
-   `pip install opencv-python mediapipe numpy matplotlib`
+5. Install dependencies:  
+   ```pip install opencv-python mediapipe numpy matplotlib```
 
-4. Run the application:  
-   `python main.py`  
+6. Run the application:  
+   ```python main.py```
 
 ---
 
