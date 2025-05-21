@@ -1,41 +1,63 @@
-# Real-Time-Exercise-Monitor-Feedback
+# Real-Time Exercise Monitor & Feedback
 
 ## 📌 About the Project
 
-The Real-Time Exercise Monitor & Feedback System is a computer vision-based application designed to assist individuals in performing physical exercises with proper form. Leveraging pose estimation techniques, the system analyzes user movements through a webcam in real-time and provides immediate, actionable feedback. This not only enhances exercise effectiveness but also helps prevent injury due to improper form.
+The **Real-Time Exercise Monitor & Feedback System** is a computer vision-based application designed to assist individuals in performing physical exercises with proper form. It leverages real-time **pose estimation** to analyze user movements through a webcam and provides **instant corrective feedback**, helping improve technique and prevent injury.
 
-The application is ideal for personal fitness routines, remote coaching environments, and rehabilitation programs where accurate movement tracking is essential. The project combines pose detection models with feedback mechanisms and a user-friendly interface to deliver a complete at-home fitness monitoring solution.
+Ideal for:
+- 🧘‍♀️ Personal fitness routines
+- 🏋️‍♂️ Remote training sessions
+- 🏥 Physical therapy and rehabilitation
+
+This project combines computer vision, pose analysis, and a user-friendly interface into a practical, at-home fitness monitoring solution.
 
 ---
 
 ## ⚙️ Features
 
-- Real-time human pose detection using webcam
-- Form evaluation for specific exercises (e.g., squats, bicep curls)
-- Feedback on movement accuracy and alignment
-- Dashboard interface for users and admins
-- Exercise data storage and progress tracking using SQLite
+- ✅ Real-time human pose tracking via webcam  
+- ✅ Feedback on form and posture for exercises (hammer curls, squats, push up)  
+- ✅ Interactive dashboards for users and administrators  
+- ✅ Persistent exercise tracking with SQLite  
+- ✅ Simple local deployment for personal or prototype use  
 
 ---
 
-Follow these steps to set up and run the project on your local machine.
+## 🚀 How to Run the Project
 
-### 1. Clone the Repository
+1. Clone the repository:  
+   `git clone https://github.com/harshith046/Real-Time-Exercise-Monitor-Feedback.git`  
+   `cd Real-Time-Exercise-Monitor-Feedback`
 
-git clone https://github.com/harshith046/Real-Time-Exercise-Monitor-Feedback.git
+2. Create and activate a virtual environment:  
+   `python -m venv venv`  
+   `venv\Scripts\activate`  
 
-cd Real-Time-Exercise-Monitor-Feedback
+3. Install dependencies:  
+   `pip install opencv-python mediapipe numpy matplotlib`
 
+4. Run the application:  
+   `python main.py`  
 
-### 2. Set Up a Virtual Environment
+---
 
-python -m venv venv
-venv\Scripts\activate
+## 🗃️ Data Storage
 
+User exercise data is saved locally in a SQLite database file named `users.db`. This allows tracking of form accuracy and progress across multiple sessions.
 
-### 3. Install Dependencies
+---
 
-Make sure pip is up to date, then install all required libraries.
+## 🧠 Technologies Used
 
+- 🎥 **OpenCV** – For video capture and image processing  
+- 🧍 **MediaPipe** – For real-time human pose estimation  
+- 📊 **NumPy**, **Matplotlib** – For data processing and plotting  
+- 🗄️ **SQLite** – For lightweight local data persistence
 
-🚀 run: python main.py
+---
+
+## 🤝 Contributions
+
+Feel free to contribute by opening issues, submitting pull requests, or suggesting new features. All contributions that enhance functionality, usability, or accuracy are welcome!
+
+---
