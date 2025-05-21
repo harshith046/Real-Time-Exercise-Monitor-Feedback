@@ -23,6 +23,7 @@ Follow these steps to set up and run the project on your local machine.
 ### 1. Clone the Repository
 
 git clone https://github.com/harshith046/Real-Time-Exercise-Monitor-Feedback.git
+
 cd Real-Time-Exercise-Monitor-Feedback
 
 
